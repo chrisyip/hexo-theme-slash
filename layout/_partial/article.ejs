@@ -21,7 +21,7 @@
     <time datetime="<%= item.date.toDate().toISOString() %>"><%= _time %></time>
     <%- partial( 'post/category' ) %>
     <%- partial( 'post/tag' ) %>
-    <%- partial( 'post/share' ) %>
+    <% if ( !is_list_page ) { %><%- partial( 'post/share' ) %><% } %>
   <% } %>
   <%- partial( 'comment' ) %>
 </footer>
