@@ -14,7 +14,10 @@
     <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= _title %></a></h2>
   <% } %>
 <% } else { %>
-  <% if (index){ %>
+  <%
+    var is_list_page = page.archive || page.tag || page.category 
+    if ( index || is_list_page ) {
+  %>
     <h2 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h2>
   <% } else { %>
     <h2 class="title"><%= item.title %></h1>
