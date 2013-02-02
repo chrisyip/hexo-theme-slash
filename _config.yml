@@ -4,8 +4,9 @@ favicon_png:
 simple_search: http://google.com/search
 
 menu:
-  Home: /
+  About: /about
   Archives: /archives
+  Works: /works
 
 widgets: 
 - search
@@ -22,21 +23,21 @@ twitter:
 
 follow_me:
   facebook:
-  github:
+  github: chrisyip
   googleplus:
   linkedin:
   pinterest:
-  twitter:
+  twitter: chrisyipw
 
 addthis:
-  enable: true
+  enable: false
   pubid:
   facebook: true
   twitter: true
   google: true
   pinterest: true
 
-fancybox: true
+fancybox: false
 
 google_analytics:
 rss:

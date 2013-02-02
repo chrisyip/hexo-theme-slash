@@ -3,4 +3,63 @@
 
 :focus
   outline 0 none
+
+.about-me
+  gradient-border-reset()
   
+  .title
+    display none
+
+  .entry-content
+    text-align center
+
+  .head-photo
+    max-width 150px
+    max-height 150px
+    margin 0 auto
+    border 5px solid #000
+    overflow hidden
+
+    border-radius( 50% )
+    user-select( none )
+    transition( 0.2s )
+
+    @media screen and (max-width: 600px)
+      max-width 100px
+      max-height 100px
+
+  ul, ol
+    list-style none
+    margin-left 0
+
+  .projects
+    li
+      background #eee
+      height 50px
+      overflow hidden
+      position relative
+
+
+      box-shadow( 0 0 10px #000 )
+      transition( height .5s )
+      user-select( none )
+
+      &:hover
+        height 150px
+
+        img
+          margin-top -150px
+
+      & + li
+        margin-top -5px
+
+      img
+        transition( margin-top .5s )
+
+
+.page-not-found
+  text-align center
+
+  .entry-content
+    text-align center
+    font-size 1.2em
