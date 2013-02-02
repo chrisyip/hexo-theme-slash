@@ -1,4 +1,4 @@
-<article>
+<article class="<% if ( item.class ) { %><%= item.class %><% } %>">
 <header class='entry-header'><%- partial( 'post/title' ) %></header>
 <%
   var is_list_page = page.archive || page.tag || page.category
