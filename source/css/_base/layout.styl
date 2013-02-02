@@ -1,20 +1,17 @@
-*
-  margin 0
-  padding 0
-
 body
   background color-background
-  color color-font
-  font-family font-default
-  font-size 14px
-  text-shadow 0 0 1px transparent
-  @media screen and (max-width: 1260px)
-    margin 0 30px
-  @media screen and (max-width: 600px)
-    font-size 13px
+  color color-text
+  font 300 14px/1.5 font-default
+  margin 0 auto
+  max-width page-width
+
+  @media screen and (max-width: 1040px)
+    margin 0 20px
 
 h1, h2, h3, h4, h5, h6
   font-family font-title
+  margin 0
+  padding 0
 
 h1
   font-size 1.8em
@@ -27,36 +24,9 @@ h3
 
 a
   text-decoration none
-  color color-link
+  color color-text
   &:hover
     text-decoration underline
 
-.alignleft
-  float left
-
-.alignright
-  float right
-
 .clearfix
   clearfix()
-
-.inner
-  width page-width
-  margin 0 auto
-  @media screen and (max-width: 1260px)
-    width 100%
-
-#main-col
-  width 900px
-  @media screen and (max-width: 1260px)
-    width 100%
-    margin-right -300px
-  @media screen and (max-width: 900px)
-    margin-right 0
-    float none
-
-#wrapper
-  @media screen and (max-width: 1260px)
-    margin-right 300px
-  @media screen and (max-width: 900px)
-    margin-right 0

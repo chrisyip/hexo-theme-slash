@@ -1,0 +1,25 @@
+gradient-border-bottom()
+  border-bottom 1px solid #fff
+  position relative
+
+  &:after
+    border-bottom 1px solid color-border
+    bottom 0
+    content ''
+    height 1px
+    left 0
+    position absolute
+    width 100%
+
+gradient-border-top()
+  border-top 1px solid color-border
+  position relative
+
+  &:after
+    border-top 1px solid #fff
+    content ''
+    height 1px
+    left 0
+    position absolute
+    width 100%
+    top 0

@@ -1,13 +1,22 @@
-<% if (item.link){ %>
-  <% if (item.title){ %>
-    <h1 class="title"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></h1>
+<% if ( item.link ) { %>
+  <% 
+    var _title = item.title || item.link
+
+    if ( theme.linklog_marker ) {
+      _title = theme.linklog_marker_position !== 'after' ?
+                theme.linklog_marker + ' ' + _title :
+                _title + ' ' + theme.linklog_marker
+    }
+  %>
+  <% if ( item.title ) { %>
+    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= _title %></a></h2>
   <% } else { %>
-    <h1 class="title"><a href="<%- item.link %>" target="_blank"><%= item.link %></a></h1>
+    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= _title %></a></h2>
   <% } %>
 <% } else { %>
   <% if (index){ %>
-    <h1 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h1>
+    <h2 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h2>
   <% } else { %>
-    <h1 class="title"><%= item.title %></h1>
+    <h2 class="title"><%= item.title %></h1>
   <% } %>
 <% } %>

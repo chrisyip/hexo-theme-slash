@@ -1,40 +1,38 @@
 <%
-var title = '';
-if (page.category) title = page.category;
-if (page.tag) title = page.tag;
-if (page.archive){
-  if (page.year) title = page.year + (page.month ? '/' + page.month : '');
-  else title = __('archive_a');
+var year = ( new Date() ).getFullYear()
+  , i = 0
+  , post = page.posts.sort( function( a, b ) {
+    a = a.date.getFullYear()
+    b = b.date.getFullYear()
+    return a === b ? 0 : a > b ? -1 : 1; 
+  })
+
+while ( true ) {
+  var max = page.posts.length - 1
+%>
+<section class="archives"><h2 class="year"><%= year %></h2>
+<%
+  for ( ; true; ) {
+    var post = page.posts[ i ]
+      , newYear
+%>
+<%- partial( 'article', { item: post, index: false } ) %>
+<%
+    if ( ++i < max ) {
+      newYear = new Date(Date.parse('Fri Feb 01 2013 16:20:00 GMT+0800 (CST)')).getFullYear()
+      if ( newYear !== year ) break;
+      year = newYear
+    } else {
+      break
+    }
+
+    if ( i > 100 ) break;
+  }
+%>
+</section>
+<%
+  if ( i >= max ) break;
+
+  if ( i > 100 ) break;
 }
 %>
-<h2 class="archive-title<% if (page.tag){ %> tag<% } else if (page.category){ %> category<% } %>"><%= title %></h2>
-
-<% if (pagination == 2){ %>
-  <% page.posts.each(function(item){ %>
-    <%- partial('article', {item: item, index: true}) %>
-  <% }); %>
-
-  <%- partial('pagination') %>
-<% } else { %>
-  <div class="archive">
-    <% page.each(function(item){ %>
-      <article class="<%= item.layout %>">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a></time>
-            <% if (item.link){ %>
-              <% if (item.title){ %>
-                <h1 class="title link"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></h1>
-              <% } else { %>
-                <h1 class="title link"><a href="<%- item.link %>" target="_blank"><%= item.link %></a></h1>
-              <% } %>
-            <% } else { %>
-              <h1 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h1>
-            <% } %>
-          </header>
-        </div>
-      </article>
-    <% }); %>
-  </div>
-<% } %>

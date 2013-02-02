@@ -1,13 +1,13 @@
-<div class="alignleft">
-  <h1><a href="<%- config.root %>"><%= config.title %></a></h1>
-  <h2><a href="<%- config.root %>"><% if (config.subtitle){ %><%= config.subtitle %><% } %></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    <% for (var i in theme.menu){ %>
-      <li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
-    <% } %>
-  </ul>
-  <div class="clearfix"></div>
+<h1><a href="<%= config.root %>"><%= config.title %></a></h1>
+<div class="menubar">
+<nav id="header-menu" class="header-menu">
+<a class="toggle-menu">Menu</a>
+<%- partial( 'navigation' ) %>
 </nav>
-<div class="clearfix"></div>
+<form action="<%= theme.simple_search %>" method="get" class="search">
+  <input type="text" name="q" results="0" class="search-field" autocomplete='off'>
+  <input type="hidden" name="q" value="site:<%= config.url.replace( /https?:\/\//, '' ) %>">
+  <a class="button"></a>
+</form>
+<%- partial( 'follow_me' ) %>
+</div>

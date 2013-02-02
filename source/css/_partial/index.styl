@@ -1,26 +1,44 @@
-#pagination
+.pagination
+  line-height 20px
+  padding 20px 0
+  position relative
+  text-align center
+
+  gradient-border-top()
+
   a
-    display block
-    padding 5px 10px
-    background color-border
-    color color-meta
+    color #258fb8
     font-family font-title
-    text-shadow 0 0 1px #fff
-    margin-bottom 50px
-    &:hover
-      background color-link
-      color #fff
-      text-decoration none
-      text-shadow none
+
+    transition( .3s )
+
+    &:after
+      font-family font-icon
+      position absolute
+      top 2px
+
+      transition( .3s )
 
   .prev
-    &:before
+    left 0
+    padding-left 40px
+    position absolute
+
+    &:after
       content '\f053'
-      padding-right 10px
-      font-family font-icon
+      left 20px
+
+    &:hover:after
+      left 0
 
   .next
+    padding-right 40px
+    position absolute
+    right 0
+
     &:after
       content '\f054'
-      padding-left 10px
-      font-family font-icon
+      right 20px
+      
+    &:hover:after
+      right 0

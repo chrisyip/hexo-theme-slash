@@ -1,42 +1,28 @@
-<article class="<%= item.layout %>">
-  <% if (item.photos){ %>
-    <%- partial('post/gallery') %>
+<article>
+<header class='entry-header'><%- partial( 'post/title' ) %></header>
+<%
+  var is_list_page = page.archive || page.tag || page.category
+  if ( !is_list_page ) {
+%>
+<div class="entry-content">
+  <% if ( item.excerpt && index ) { %>
+    <%- item.excerpt %>
+    <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
+  <% } else { %>
+    <%- item.content %>
   <% } %>
-  <div class="post-content">
-    <header>
-      <% if (item.layout != 'page'){ %>
-        <div class="icon"></div>
-        <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a></time>
-      <% } %>
-      <%- partial('post/title') %>
-    </header>
-    <div class="entry">
-      <% if (item.excerpt && index){ %>
-        <%- item.excerpt %>
-      <% } else { %>
-        <%- item.content %>
-      <% } %>
-    </div>
-    <footer>
-      <% if (index){ %>
-        <% if (item.excerpt){ %>
-          <div class="alignleft">
-            <a href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %></a>
-          </div>
-        <% } %>
-        <% if (item.comment && config.disqus_shortname){ %>
-        <div class="alignright">
-          <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
-        </div>
-        <% } %>
-      <% } else { %>
-        <%- partial('post/category') %>
-        <%- partial('post/tag') %>
-        <%- partial('post/share') %>
-      <% } %>
-      <div class="clearfix"></div>
-    </footer>
-  </div>
+</div>
+<% } %>
+<footer class='entry-footer'>
+  <%
+    if ( item.layout !== 'page' ) {
+      var _time = is_list_page ? item.date.format( theme.date_format.shorthand ) : item.date.format( config.date_format )
+  %>
+    <time datetime="<%= item.date.toDate().toISOString() %>"><%= _time %></time>
+    <%- partial( 'post/category' ) %>
+    <%- partial( 'post/tag' ) %>
+    <%- partial( 'post/share' ) %>
+  <% } %>
+  <%- partial( 'comment' ) %>
+</footer>
 </article>
-
-<%- partial('comment') %>

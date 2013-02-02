@@ -1,3 +1,8 @@
+favicon_ico: 
+favicon_png: 
+
+simple_search: http://google.com/search
+
 menu:
   Home: /
   Archives: /archives
@@ -15,6 +20,14 @@ twitter:
   show_replies: false
   tweet_count: 5
 
+follow_me:
+  facebook:
+  github:
+  googleplus:
+  linkedin:
+  pinterest:
+  twitter:
+
 addthis:
   enable: true
   pubid:
@@ -27,3 +40,15 @@ fancybox: true
 
 google_analytics:
 rss:
+
+# Linklog
+permalink_label: "&infin;"
+permalink_label_feed: "&infin; Permalink"
+linklog_marker: "&rarr;"
+linklog_marker_position: before
+linklog_marker_position_feed: before
+standard_post_marker:
+
+# Date Format
+date_format:
+  shorthand: MMM Do
