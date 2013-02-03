@@ -11,6 +11,11 @@
   <% } else { %>
     <%- item.content %>
   <% } %>
+  <%
+    if ( index && item.link ) {
+  %>
+  <a class="permalink" href="<%= config.root + item.path %>"><%= theme.linklog.permalink_label || "&infin;" %></a>
+  <% } %>
 </div>
 <% } %>
 <footer class='entry-footer'>
