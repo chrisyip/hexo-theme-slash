@@ -1,38 +1,42 @@
 <%
-var year = ( new Date() ).getFullYear()
-  , i = 0
+var i = 0
   , post = page.posts.sort( function( a, b ) {
     a = a.date.getFullYear()
     b = b.date.getFullYear()
     return a === b ? 0 : a > b ? -1 : 1; 
   })
+  , not_empty = page.posts && page.posts.length > 0
+  , year
 
-while ( true ) {
+while ( not_empty ) {
   var max = page.posts.length - 1
+  if ( !year ) year = new Date( Date.parse( page.posts[ 0 ].date ) ).getFullYear()
 %>
 <section class="archives"><h2 class="year"><%= year %></h2>
 <%
-  for ( ; true; ) {
+  while ( true ) {
     var post = page.posts[ i ]
       , newYear
 %>
 <%- partial( 'article', { item: post, index: false } ) %>
 <%
     if ( ++i < max ) {
-      newYear = new Date(Date.parse('Fri Feb 01 2013 16:20:00 GMT+0800 (CST)')).getFullYear()
-      if ( newYear !== year ) break;
-      year = newYear
+      newYear = new Date( Date.parse( post.date) ).getFullYear()
+      if ( newYear !== year ) {
+        year = newYear
+        break
+      }
     } else {
       break
     }
-
-    if ( i > 100 ) break;
   }
 %>
+
 </section>
 <%
   if ( i >= max ) break;
-
-  if ( i > 100 ) break;
 }
 %>
+<% if (pagination == 2){ %>
+<%- partial( 'pagination' ) %>
+<% } %>
