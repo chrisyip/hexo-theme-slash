@@ -40,7 +40,7 @@ addthis:
 fancybox: false
 
 google_analytics:
-rss:
+rss: atom.xml
 
 # Linklog
 permalink_label: "&infin;"
