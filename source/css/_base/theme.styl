@@ -1,6 +1,9 @@
 ::-moz-selection, ::-webkit-selection, ::selection
   background-color color-selection
 
-:focus
-  outline 0 none
+input, textarea, [contenteditable]
+  &:focus
+    outline 0 none
   
+a
+  transition( .3s )

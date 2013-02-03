@@ -5,5 +5,5 @@
   <% if ( page.next ) { %>
     <a href="<%= config.root %><%= page.next_link %>" class="next"><%= __( 'next' ) %></a>
   <% } %>
-  <a class="archives" href="<%= config.root + ( theme.menu.Archives || '/archives' ) %>">Blog Archives</a>
+  <a class="archives" href="<%= theme.menu.Archives || config.root + 'archives' %>">Blog Archives</a>
 </nav>
