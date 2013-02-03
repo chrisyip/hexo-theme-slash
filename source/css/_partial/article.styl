@@ -5,7 +5,8 @@ article
   font-size 16px
   padding 30px 0
 
-  gradient-border-bottom()
+  & + article
+    gradient-border-top()
 
   &.page
     padding-left 20px
@@ -63,6 +64,10 @@ article
 
   a
     color color-link
+
+  .permalink
+    color color-text
+    text-decoration underline
 
   blockquote
     border-top 1px solid color-border
