@@ -42,15 +42,6 @@ fancybox: true
 google_analytics:
 rss:
 
-# Linklog
-linklog:
-  permalink_label: "&infin;"
-  permalink_label_feed: "&infin; Permalink"
-  marker: "&rarr;"
-  marker_position: before
-  marker_position_feed: before
-  standard_post_marker:
-
 # Date Format
 date_format:
   shorthand: MMM Do

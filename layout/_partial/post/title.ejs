@@ -2,10 +2,10 @@
   <% 
     var _title = item.title || item.link
 
-    if ( theme.linklog.marker ) {
-      _title = theme.linklog.marker_position !== 'after' ?
-                theme.linklog.marker + ' ' + _title :
-                _title + ' ' + theme.linklog.linklog_marker
+    if ( config.linklog_marker ) {
+      _title = config.linklog_marker_position !== 'after' ?
+                config.linklog_marker + _title :
+                _title + config.linklog_marker
     }
   %>
   <% if ( item.title ) { %>
