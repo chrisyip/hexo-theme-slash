@@ -1,25 +1,33 @@
 <% if ( item.link ) { %>
   <% 
-    var _title = item.title || item.link
+    var title = item.title || item.link
 
-    if ( theme.linklog.marker ) {
-      _title = theme.linklog.marker_position !== 'after' ?
-                theme.linklog.marker + ' ' + _title :
-                _title + ' ' + theme.linklog.linklog_marker
+    if ( config.linklog_marker ) {
+      title = config.linklog_marker_position !== 'after' ?
+                config.linklog_marker + title :
+                title + config.linklog_marker
     }
   %>
   <% if ( item.title ) { %>
-    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= _title %></a></h2>
+    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= title %></a></h2>
   <% } else { %>
-    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= _title %></a></h2>
+    <h2 class="title"><a href="<%- item.link %>" target="_blank"><%= title %></a></h2>
   <% } %>
 <% } else { %>
   <%
-    var is_list_page = page.archive || page.tag || page.category 
+    var is_list_page = page.archive || page.tag || page.category
+      , title = item.title
+
+    if ( config.standard_post_marker ) {
+      title = config.standard_post_marker_position !== 'after' ?
+                config.standard_post_marker + title :
+                title + config.standard_post_marker
+    }
+
     if ( index || is_list_page ) {
   %>
-    <h2 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h2>
+    <h2 class="title"><a href="<%- config.root %><%- item.path %>"><%= title %></a></h2>
   <% } else { %>
-    <h2 class="title"><%= item.title %></h1>
+    <h2 class="title"><%= title %></h1>
   <% } %>
 <% } %>

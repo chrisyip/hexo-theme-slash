@@ -29,8 +29,9 @@ follow_me:
   pinterest:
   twitter: chrisyipw
 
+# addthis plugin has a performance issue, disable by default
 addthis:
-  enable: false
+  enable:
   pubid:
   facebook: true
   twitter: true
@@ -41,15 +42,6 @@ fancybox: false
 
 google_analytics:
 rss: atom.xml
-
-# Linklog
-linklog:
-  permalink_label: "&infin;"
-  permalink_label_feed: "&infin; Permalink"
-  marker: "&rarr;"
-  marker_position: before
-  marker_position_feed: before
-  standard_post_marker:
 
 # Date Format
 date_format:
