@@ -28,8 +28,9 @@ follow_me:
   pinterest:
   twitter:
 
+# addthis plugin has a performance issue, disable by default
 addthis:
-  enable: true
+  enable:
   pubid:
   facebook: true
   twitter: true
