@@ -41,7 +41,7 @@ addthis:
 fancybox: false
 
 google_analytics:
-rss: atom.xml
+rss: http://feeds.feedburner.com/imchrisyip
 
 # Date Format
 date_format:
