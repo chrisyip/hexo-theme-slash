@@ -12,16 +12,16 @@
     <%- item.content %>
   <% } %>
   <%
-    if ( index && item.link ) {
+    if ( index && item.link && config.permalink_label ) {
   %>
-  <a class="permalink" href="<%= config.root + item.path %>"><%= theme.linklog.permalink_label || "&infin;" %></a>
+  <a class="permalink" href="<%= config.root + item.path %>"><%= config.permalink_label %></a>
   <% } %>
 </div>
 <% } %>
 <footer class='entry-footer'>
   <%
     if ( item.layout !== 'page' ) {
-      var _time = is_list_page ? item.date.format( theme.date_format.shorthand ) : item.date.format( config.date_format )
+      var _time = item.date.format( is_list_page ? theme.date_format.shorthand || config.date_format : config.date_format )
   %>
     <time datetime="<%= item.date.toDate().toISOString() %>"><%= _time %></time>
     <%- partial( 'post/category' ) %>

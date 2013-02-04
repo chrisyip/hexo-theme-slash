@@ -33,21 +33,22 @@
           &:visited
             color color-link
 
-figure.highlight
-  background #eee
-  border 1px solid color-border
-  margin-top 15px
-  padding 7px 15px
-  border-radius 2px
-  text-shadow 0 0 1px #fff
-  line-height 1.6
+.highlight
+  background color-code-background
+  border 1px solid color-border-darken
+  margin 10px 0 0
+  line-height font-code-line-height
   overflow auto
+  padding 7px 15px
   position relative
+
+  border-radius(5px)
+
   figcaption
     color color-meta
     font-size 0.9em
     margin-bottom 5px
-    text-shadow 0 0 1px #fff
+
     a
       position absolute
       right 15px
@@ -64,12 +65,12 @@ figure.highlight
   .gutter
     color color-meta
     padding-right 15px
-    border-right 1px solid color-border
+    border-right 1px solid color-border-darken
     text-align right
 
   .code
     padding-left 15px
-    border-left 1px solid #fff
+    border-left 1px solid #fff - 7%
 
 pre
   // Theme: Solarized - Light
