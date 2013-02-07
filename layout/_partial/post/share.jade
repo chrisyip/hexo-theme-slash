@@ -1,0 +1,16 @@
+if theme.addthis.enable
+  .addthis.addthis_toolbox.addthis_default_style
+    if theme.addthis.facebook
+      a.addthis_button_facebook_like( fb:like:layout="button_count" )
+
+    if theme.addthis.twitter
+      a.addthis_button_tweet
+
+    if theme.addthis.google
+      a.addthis_button_google_plusone( g:plusone:size="medium" )
+
+    if theme.addthis.pinterest
+      a.addthis_button_pinterest_pinit( pi:pinit:layout="horizontal" )
+
+    a.addthis_counter.addthis_pill_style
+  script( src="http://s7.addthis.com/js/300/addthis_widget.js#{ theme.addthis.pubid }" )

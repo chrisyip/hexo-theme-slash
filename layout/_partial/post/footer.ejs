@@ -1,9 +1,0 @@
-<footer class='entry-footer'>
-  <% if ( item.layout !== 'page' ) { %>
-    <time datetime="<%= item.date.toDate().toISOString() %>"><%= item.date.format( config.date_format ) %></time>
-    <%- partial( 'post/category' ) %>
-    <%- partial( 'post/tag' ) %>
-    <%- partial( 'post/share' ) %>
-  <% } %>
-  <%- partial( 'comment' ) %>
-</footer>

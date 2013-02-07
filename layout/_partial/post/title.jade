@@ -1,0 +1,23 @@
+- var title = item.title
+- if item.link
+  - unless
+    - title = item.link
+
+  - if config.linklog_marker
+    - title = config.linklog_marker_position !== 'after' ?
+                config.linklog_marker + title :
+                title + config.linklog_marker
+
+  h2.title
+    a(href="#{item.link}" target="#{_blank}")= title
+- else
+  - if config.standard_post_marker
+    - title = config.standard_post_marker_position !== 'after' ?
+                config.standard_post_marker + title :
+                title + config.standard_post_marker
+
+  h2.title
+    - if index || is_list_page
+      a(href="#{config.root}#{item.path}")= title
+    - else
+      =title

@@ -1,0 +1,4 @@
+- if item.categories
+  .categories
+    each cat in item.categories
+      a(href="#{config.root}#{cat.path}")= cat.name

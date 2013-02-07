@@ -1,0 +1,9 @@
+nav.pagination
+  if page.prev
+    a.prev(href="#{config.root}#{page.prev_link}")= __( 'prev' )
+
+  if page.next
+    a.next(href="#{config.root}#{page.next_link}")= __( 'next' )
+
+  - var archives_link = theme.menu.Archives || config.mene.Archives || config.root + 'archives'
+  a.archives(href="#{archives_link}") __( 'archive_a' )
