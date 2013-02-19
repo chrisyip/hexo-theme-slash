@@ -1,5 +1,5 @@
-favicon_ico: 
-favicon_png: 
+favicon_ico:
+favicon_png:
 
 simple_search: http://google.com/search
 
@@ -8,7 +8,7 @@ menu:
   Archives: /archives
   Works: /works
 
-widgets: 
+widgets:
 - search
 - category
 - tag
@@ -37,8 +37,6 @@ addthis:
   twitter: true
   google: true
   pinterest: true
-
-fancybox: false
 
 google_analytics: UA-15420910-3
 rss: http://feeds.feedburner.com/imchrisyip
