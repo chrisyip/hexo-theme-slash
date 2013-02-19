@@ -1,5 +1,5 @@
-favicon_ico: 
-favicon_png: 
+favicon_ico:
+favicon_png:
 
 simple_search: http://google.com/search
 
@@ -7,7 +7,7 @@ menu:
   Home: /
   Archives: /archives
 
-widgets: 
+widgets:
 - search
 - category
 - tag
@@ -36,8 +36,6 @@ addthis:
   twitter: true
   google: true
   pinterest: true
-
-fancybox: true
 
 google_analytics:
 rss:
