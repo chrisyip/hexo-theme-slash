@@ -10,7 +10,7 @@
   if ( page.archive ) {
     if ( page.year ) {
       title.push( __( 'archive_b',
-                      page.year + 
+                      page.year +
                       ( page.month ? '/' + page.month : '' ) ) )
     }
     else title.push( __( 'archive_a') )
@@ -36,7 +36,7 @@
 %>
 <meta name="description" content="<%= _description %>">
 
-<% if ( page.keywords | config.keywords ) { %>
+<% if ( page.keywords || config.keywords ) { %>
   <meta name="keywords" content="<%= page.keywords || config.keywords %>">
 <% } %>
 
