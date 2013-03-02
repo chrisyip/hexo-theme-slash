@@ -1,35 +1,21 @@
-- var i = 0
-  - , post = page.posts.sort( function( a, b ) {
-  - a = a.date.getFullYear()
-  - b = b.date.getFullYear()
-  - return a === b ? 0 : a > b ? -1 : 1; 
-- })
-- , not_empty = page.posts && page.posts.length > 0
-- , year
+- var posts = {}
+- page.posts.each ( function ( post ) {
+  - var year = post.date.toDate().getFullYear()
+  - if posts[ year ] instanceof Array
+    - posts[ year ].push( post )
+  - else
+    - posts[ year ] = [ post ]
+  - } )
 
-while not_empty
-- var max = page.posts.length - 1
-- if ( !year ) year = new Date( Date.parse( page.posts[ 0 ].date ) ).getFullYear()
-
-  section.archives
+- Object.keys( posts ).sort( function ( a, b ) {
+  - return a == b ? 0 : a < b ? 1 : -1;
+  - } ).forEach( function ( year ) ) {
+section.archives
     h2.year= year
-
-  - var index = false
-  while true
-  - var item = pages.posts[ i ]
-    - , next_year
+    - posts[ year ].forEach( function ( post ) {
     include article
-
-    if ++i < max
-      - next_year = new Date( Date.parse( post.date) ).getFullYear()
-      - if next_year !== year
-        - year = next_year
-        - break
-    else
-      - break
-
-  if i >= max
-    - break
+    - } )
+  - } )
 
 if pagination == 2
 include pagination
