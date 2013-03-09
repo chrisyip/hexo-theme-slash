@@ -93,7 +93,7 @@ article
     background color-code-background
     border 1px solid color-border-darken
     font-family font-mono
-    
+
     border-radius 5px
 
   code
@@ -211,6 +211,11 @@ article
   time
     &:before
       content "\f073"
+
+  .categories, .tags
+    &
+      a:not( :last-child ):after
+        content ', '
 
   .categories
     &:before

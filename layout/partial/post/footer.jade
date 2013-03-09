@@ -1,0 +1,10 @@
+footer.entry-footer
+  if ( post.layout !== 'page' )
+    - var time = post.date.format( /archive|tag|category/.test( page_type ) ? theme.date_format.shorthand || config.date_format : config.date_format )
+    time( datetime="#{ post.date.toDate().toISOString() }" )= time
+    include category
+    include tag
+    include share
+
+  if ( post.comments && 'post' == page_type )
+    include ../comment

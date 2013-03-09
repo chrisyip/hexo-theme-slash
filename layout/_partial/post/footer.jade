@@ -1,9 +1,0 @@
-footer.entry-footer
-  if item.layout !== 'page'
-    - var time = item.date.format( is_list_page ? theme.date_format.shorthand || config.date_format : config.date_format )
-    time( datetime="#{ item.date.toDate().toISOString() }" )= time
-    include post/category
-    include post/tag
-    include post/share
-
-  include comment

@@ -2,4 +2,6 @@
 layout: default
 ---
 
-<%- partial('_partial/article', {item: page, index: false}) %>
+- page_type = 'post'
+- var post = page
+include partial/article

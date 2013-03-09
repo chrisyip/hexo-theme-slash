@@ -2,4 +2,6 @@
 layout: default
 ---
 
-<%- partial('_partial/archive', {pagination: config.tag}) %>
+- page_type = 'tag'
+- var pagination = config.tag
+include partial/archive

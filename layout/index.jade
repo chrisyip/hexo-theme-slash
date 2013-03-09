@@ -2,8 +2,9 @@
 layout: default
 ---
 
-index = true
-each item in page.posts
-  include _partial/article
+- page_type = 'index'
+- page.posts.each( function ( post ) {
+  include partial/article
+- } )
 
-include _partial/pagination
+include partial/pagination

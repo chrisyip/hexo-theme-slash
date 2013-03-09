@@ -1,0 +1,9 @@
+h2.title
+  - var title = post.title || post.link || '', link = post.link || config.root + post.path
+  if ( post.link && config.linklog_marker )
+    - title = config.linklog_marker_position === 'after' ? title + config.linklog_marker : config.linklog_marker + title
+
+  if ( 'post' != page_type )
+    a( href='#{ link }' )= title
+  else
+    = title

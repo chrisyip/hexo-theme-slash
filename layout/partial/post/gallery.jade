@@ -1,7 +1,6 @@
 .gallery
   .photoset
     if (item.photos.length)
-      item.photos.forEach(function(photo){ %>
       each photo in item.photos
         img( src='#{ photo }')
     else

@@ -1,11 +1,13 @@
-include _partial/head
+- var page_type
+
+include partial/head
 
 header#header.inner.page-header
-  include _partial/header
+  include partial/header
 
-#content.inner.content= body
+#content.inner.content!= body
 
 footer#footer.inner.page-footer
-  include _partial/footer
+  include partial/footer
 
-include _partial/after_footer
+include partial/after_footer
