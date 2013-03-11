@@ -56,13 +56,11 @@ a
       user-select( none )
 
       &:hover
-        height 150px
-
-        img
-          margin-top -150px
+        height 200px
 
       & + li
         margin-top -5px
 
-      img
-        transition( margin-top .5s )
+      @media screen and ( max-width: 600px )
+        &:hover
+          height 100px
