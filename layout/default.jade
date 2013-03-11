@@ -1,0 +1,13 @@
+- var page_type
+
+include partial/head
+
+header#header.inner.page-header
+  include partial/header
+
+#content.inner.content!= body
+
+footer#footer.inner.page-footer
+  include partial/footer
+
+include partial/after_footer

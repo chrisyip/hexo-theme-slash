@@ -1,0 +1,11 @@
+.gallery
+  .photoset
+    if (item.photos.length)
+      each photo in item.photos
+        img( src='#{ photo }')
+    else
+      img( src='#{ item.photo }')
+
+  .control
+    .prev
+    .next

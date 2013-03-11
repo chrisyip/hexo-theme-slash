@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+- page_type = 'index'
+- page.posts.each( function ( post ) {
+  include partial/article
+- } )
+
+include partial/pagination

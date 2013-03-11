@@ -1,0 +1,5 @@
+if ( post.categories.length )
+  .categories
+    - post.categories.each( function ( item ) {
+      a(href="#{ config.root }#{ item.path }")= item.name
+    - } )

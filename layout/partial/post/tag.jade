@@ -1,0 +1,5 @@
+if ( post.tags.length )
+  .tags
+    - post.tags.each( function ( item ) {
+      a(href="#{ config.root }#{ item.path }")= item.name
+    - } )

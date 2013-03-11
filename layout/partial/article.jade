@@ -1,0 +1,12 @@
+if ( post )
+  article
+    header.entry-header
+      include post/title
+
+    - if ( /index|post/.test( page_type ) )
+      .entry-content
+        != post.content
+        - if ( post.link && config.permalink_label )
+            a.permalink( href="#{ post.permalink }" )= config.permalink_label
+
+    include post/footer

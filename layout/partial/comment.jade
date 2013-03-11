@@ -1,0 +1,10 @@
+if ( config.disqus_shortname && ( page.comments || post.comments ) )
+  section.comments
+    h2.title
+      a( name="comments" )= __('comment')
+    #disqus_thread
+      noscript Please enable JavaScript to view the
+        a( href="http://disqus.com/?ref_noscript" ) comments powered by Disqus
+
+  - var disqus_src = "http://" + config.disqus_shortname + ".disqus.com/" + ( ( page.comments || post.comments ) ? 'embed.js' : 'count.js' )
+  script var disqus_shortname="#{ config.disqus_shortname }";(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="#{ disqus_src }";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)})();
