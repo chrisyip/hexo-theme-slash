@@ -1,3 +1,5 @@
+### Recommend to copy config to global _config.yml
+
 favicon_ico:
 favicon_png:
 
@@ -8,18 +10,7 @@ menu:
   Archives: /archives
   Works: /works
 
-widgets:
-- search
-- category
-- tag
-- twitter
-
 excerpt_link: Read More
-
-twitter:
-  username:
-  show_replies: false
-  tweet_count: 5
 
 follow_me:
   facebook:
