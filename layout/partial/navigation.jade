@@ -1,2 +1,5 @@
-- for ( var item in theme.menu )
-  a.menu-item( href="#{ theme.menu[ item ] }" )= item
+if ( theme.menu )
+  ul
+    - for ( var item in theme.menu )
+      li
+        a.menu-item( href="#{ theme.menu[ item ] }" )= item

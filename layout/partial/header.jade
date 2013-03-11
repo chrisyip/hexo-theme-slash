@@ -6,9 +6,9 @@ h1
     a.toggle-menu= __( 'menu' )
     include navigation
 
-  - var google_search = theme.google_search || config.google_search
-  - if ( google_search )
-    form.search( action="#{ google_search }", method="get" )
+  - var simple_search = theme.simple_search || config.simple_search
+  - if ( simple_search )
+    form.search( action="#{ simple_search }", method="get" )
       input.search-field( name='q', autocomplete='off' )
       input( type="hidden", name='q', value="site:#{ config.url.replace( /https?:\/\//, '' ) }" )
       a.button

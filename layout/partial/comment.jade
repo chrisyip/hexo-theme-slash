@@ -1,4 +1,4 @@
-if ( config.disqus_shortname && ( page.comments || post.comments ) )
+if ( config.disqus_shortname && ( post.comments || page.comments ) && !/index|archive|tag|category/.test( page_type ) )
   section.comments
     h2.title
       a( name="comments" )= __('comment')
