@@ -50,12 +50,6 @@
   margin 0
   position relative
 
-  a
-    float left
-
-    &:not( :first-child ) + a
-      margin-left 50px
-
   .toggle-menu
     background color-title
     border 1px solid color-border
@@ -79,6 +73,12 @@
       position: absolute;
       top: 0;
       right: 40px;
+
+  li
+    float left
+
+    & + li
+      margin-left 50px
 
   &.on
     .toggle-menu
@@ -191,7 +191,7 @@
   border-radius( 15px )
   transition( .3s )
 
-  &:focus
+  &:focus, &:hover
     background-color #fff
     border-top 1px solid #ccc
     color color-text

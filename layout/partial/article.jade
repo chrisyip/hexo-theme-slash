@@ -1,9 +1,10 @@
 if ( post )
-  article
+  - var klass = post.class || ''
+  article( class="#{klass}" )
     header.entry-header
       include post/title
 
-    - if ( /index|post/.test( page_type ) )
+    - if ( /index|post|page/.test( page_type ) )
       .entry-content
         != post.content
         - if ( post.link && config.permalink_label )
