@@ -8,6 +8,6 @@ if ( post )
       .entry-content
         != post.content
         - if ( post.link && config.permalink_label )
-            a.permalink( href="#{ post.permalink }" )= config.permalink_label
+            a.permalink( href="#{ config.root + post.path }" )= config.permalink_label
 
     include post/footer
