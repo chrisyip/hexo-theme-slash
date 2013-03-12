@@ -3,7 +3,7 @@ h2.title
   if ( post.link && config.linklog_marker )
     - title = config.linklog_marker_position === 'after' ? title + config.linklog_marker : config.linklog_marker + title
 
-  if ( 'post' != page_type )
+  if ( post.link )
     a( href='#{ link }' )= title
   else
     = title
