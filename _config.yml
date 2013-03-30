@@ -30,7 +30,7 @@ addthis:
   pinterest: true
 
 google_analytics: UA-15420910-3
-rss: http://feeds.feedburner.com/imchrisyip
+rss: /atom.xml
 
 # Date Format
 date_format:
