@@ -28,6 +28,7 @@
       float none
       margin-bottom 15px
       margin-right 0
+      z-index 0
 
   ul
     margin 0
@@ -162,10 +163,12 @@
       display none
 
     &.on
-      cursor default
       width 100%
 
       border-radius( 5px )
+
+      &:after
+        content "\f00d"
 
       &:after
         color color-text
